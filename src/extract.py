@@ -18,7 +18,7 @@ def fetch_data():
 
         data = res.json()
 
-        return data
+        return data['users']
     except Exception as e:
         logger.error(f'An error occurred {e}')
         sys.exit(1)
