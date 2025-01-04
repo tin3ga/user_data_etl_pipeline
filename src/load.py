@@ -27,9 +27,13 @@ def read_csv_data(file_name):
     except pd.errors.EmptyDataError:
         logger.error("Error: Transformed data file is empty.")
         sys.exit(1)
-    except Exception as e:
-        logger.error(f"Error reading transformed data file: {e}")
+    except pd.errors.ParserError:
+        logger.error("Error: Parsing error while reading the transformed data file.")
         sys.exit(1)
+    except pd.errors.DtypeWarning:
+        logger.warning("Warning: Columns have mixed types.")
+        df = pd.read_csv(file_name, dtype=str)
+        return df
 
 
 def load_to_postgres(engine, df, table_name):

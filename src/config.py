@@ -11,8 +11,10 @@ class Config:
     Attributes:
         URL (str): The URL to fetch user data from.
         JSON_FILE (str): The filename to save the raw user data in JSON format.
-        CSV_FILE (str): The filename to save the transformed user data in CSV format.
-        DATABASE_URL (str): The database connection URL, fetched from environment variables.
+        CSV_FILE (str): The filename to save the transformed
+        user data in CSV format.
+        DATABASE_URL (str): The database connection URL,
+        fetched from environment variables.
     """
     URL = 'https://dummyjson.com/users'
     JSON_FILE = 'user_data.json'

@@ -14,7 +14,7 @@ def load_data(file_name: str):
             data = json.load(file)
         return data
     except Exception as e:
-        logger.error(f'Eroor loading file {file_name}')
+        logger.error(f'Error loading file {file_name}, {e}')
         sys.exit(1)
 
 
